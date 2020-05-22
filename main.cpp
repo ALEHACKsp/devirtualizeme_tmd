@@ -13,7 +13,7 @@ void routine()
 	// 1: 0x0040CA5A
 	// 2: 0x0040C97A
 	// 3: 0x0040C89A
-	deob(stream, 0x0040CA5A);
+	make_cfg(stream, 0x0040CA5A);
 }
 
 void fish32()
@@ -29,7 +29,7 @@ void fish32()
 	//deob(stream, 0x005BEE39);
 	//deob(stream, 0x005C2D73);
 	//deob(stream, 0x007A0F92);
-	deob(stream, 0x0040C89A);
+	make_cfg(stream, 0x0040C89A);
 }
 
 int main(int argc, char* argv[])

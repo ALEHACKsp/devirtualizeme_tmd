@@ -16,6 +16,12 @@
     <Filter Include="cfg">
       <UniqueIdentifier>{82360334-35f3-41a5-99bb-ecb0c7bbd722}</UniqueIdentifier>
     </Filter>
+    <Filter Include="tmd">
+      <UniqueIdentifier>{485e7804-5914-47d9-b9e7-51be9ebade24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="triton">
+      <UniqueIdentifier>{87e236d6-ec0a-472f-ba02-43b1a7a64e14}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -45,6 +51,12 @@
     <ClCompile Include="repl.cpp">
       <Filter>cfg</Filter>
     </ClCompile>
+    <ClCompile Include="tmd.cpp">
+      <Filter>tmd</Filter>
+    </ClCompile>
+    <ClCompile Include="triton.cpp">
+      <Filter>triton</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -67,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="cfg.hpp">
       <Filter>cfg</Filter>
+    </ClInclude>
+    <ClInclude Include="triton.hpp">
+      <Filter>triton</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

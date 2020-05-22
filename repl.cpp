@@ -4,11 +4,12 @@
 
 enum class op_type
 {
-	any,
-	reg,
-	mem,
-	imm,
-	copy
+	invalid = 0x00,
+	any = 0x01,
+	reg = 0x02,
+	mem = 0x04,
+	imm = 0x08,
+	copy = 0x10
 };
 struct operand
 {
@@ -44,6 +45,7 @@ struct operand
 		} copy;
 	};
 
+	operand() {}
 	operand(op_type, int k, int j)
 	{
 	}
@@ -129,7 +131,7 @@ xed_encoder_operand_t encode_operand(const operand& op, std::vector<std::shared_
 		}
 		case op_type::copy:
 		{
-			operand copy_op(0,0);
+			operand copy_op;
 			std::shared_ptr<x86_instruction> source_inst = source[op.copy.i];
 			if (source[op.copy.i]->get_operand(op.copy.j).is_register())
 			{
@@ -248,10 +250,10 @@ static void test()
 	p.match =
 	{
 		{
-			XED_ICLASS_MOV, { { op_type::any } }
+			XED_ICLASS_PUSH, { { op_type::any, 0, 0 } }
 		},
 		{
-			XED_ICLASS_MOV, { { op_type::any } }
+			XED_ICLASS_POP, { { op_type::reg, 0, 0 } }
 		}
 	};
 	p.replace =

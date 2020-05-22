@@ -21,3 +21,8 @@ extern "C"
 
 // etc
 #include <chrono>
+
+// triton
+#include <triton/api.hpp>
+#include <triton/ast.hpp>
+#include <triton/x86Specifications.hpp>
